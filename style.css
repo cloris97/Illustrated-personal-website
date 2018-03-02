@@ -1,0 +1,214 @@
+/* Color palette */
+:root {
+    --dark-blue: #37425a;
+    --salmon: #fc7970;
+    --apricot: #fcc468;
+    --peach: #f3ddca;
+    --skin: #f2d8c2;
+}
+
+/* Preparing canvas, normalizing styles */
+body {
+    box-sizing: border-box;
+    font-family: Montserrat, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    color: var(--dark-blue);
+    background-color: var(--salmon);
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+img {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+/* nav bar is a sticky top bar*/
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2.5%;
+    font-weight: 700;
+}
+/* nav bar has its own grid  */
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+/* nav bar link styling */
+nav a {
+    opacity: 0.4;
+    color: white;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease-in-out;
+}
+nav a:hover,
+nav a:active {
+    opacity: 1;
+}
+/* 4-col and 3-row grid */
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 33.33vh);
+}
+
+/* Cloris section */
+#cloris {
+    background-color: var(--salmon);
+}
+/* img on left half of the grid */
+#cloris img {
+    grid-column: 1 / 4;
+    grid-row: 1 / -1;
+    align-self: center;
+    padding: 1% 2%;
+    max-width: 30vw;
+}
+/* h1 on right top */
+h1 {
+    grid-column: 4 / -1;
+    grid-row: 1 / 3;
+    align-self: center;
+    color: var(--skin);
+    text-align: right;
+    font-size: 15rem;
+    line-height: 0.8;
+    letter-spacing: 0.5rem;
+    margin: 0;
+}
+/* h2 on right bottom */
+h2 {
+    grid-column: 4 / -1;
+    grid-row: 3 / -1;
+    font-weight: 400;
+    margin: auto;
+    justify-self: center;
+    align-self: end;
+    font-size: 2rem;
+}
+
+/* Background section */
+#background {
+    background-color: var(--dark-blue);
+    justify-items: center;
+}
+/* img on top 2 rows */
+#background img {
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+    padding-top: 10vh;
+    max-width: 40vw;
+}
+/* p on bottom row */
+p {
+    grid-column: 1 / -1;
+    grid-row: 3 / -1;
+    color: #587799;
+    margin: 0;
+    font-size: 1.8rem;
+    align-self: center;
+    max-width: 700px;
+    line-height: 1.3;
+}
+
+/* Education section */
+#education {
+    background-color: var(--apricot);
+    justify-items: center;
+}
+/* img at the bottom 2 rows */
+#education img {
+    grid-column: 2 / 4;
+    grid-row: 2 / -1;
+    max-height: 55vh;
+    padding-top: 5vh;
+}
+/* p on top */
+#education p {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    color: var(--dark-blue);
+    padding-top: 5vh;
+}
+
+/* Skills section */
+#skills {
+    background-color: var(--peach);
+}
+/* table is at the bottom row */
+table {
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+    justify-self: center;
+    align-self: center;
+    margin-top: 10vh;
+    border-collapse: collapse;
+}
+th {
+    padding: 10px 20px;
+    background-color: #FAC4B2;
+}
+td {
+    padding: 10px;
+}
+tr:nth-child(2n+1){
+    background-color: var(--skin);
+}
+/* p is on top 2 rows */
+#skills p {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+    align-self: center;
+    color: var(--dark-blue);
+    font-size: 2rem;
+}
+
+footer{
+    background-color: var(--peach);
+    padding: 10px;
+}
+/* "I did it" statement floated to the bottom left */
+footer p {
+    color: #fafafa;
+    font-size: 1rem;
+    float: left;
+    padding-top: 4px;
+}
+/* make social media bar horizontal a.k.a. floated */
+footer li {
+    float: left;
+    display: block;
+    padding: 0 10px;
+    font-size: 1.5rem;
+}
+/* styling Fontawesome icons, which are at the bottom right */
+footer div {
+    float: right;
+}
+/* subtle animation */
+footer a {
+    color: #fafafa;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+footer a:hover {
+    opacity: 1;
+}
+/* clearfix */
+.clearfix {
+    overflow: auto;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
