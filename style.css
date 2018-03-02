@@ -70,7 +70,7 @@ section {
     grid-column: 1 / 4;
     grid-row: 1 / -1;
     align-self: center;
-    padding: 1% 2%;
+    padding: 2;
     max-width: 30vw;
 }
 /* h1 on right top */
