@@ -90,9 +90,8 @@ h2 {
     grid-column: 4 / -1;
     grid-row: 3 / -1;
     font-weight: 400;
-    margin: auto;
     justify-self: center;
-    align-self: end;
+    align-self: center;
     font-size: 2rem;
 }
 
