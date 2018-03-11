@@ -7,7 +7,7 @@
     --skin: #f2d8c2;
 }
 
-/* Preparing canvas, normalizing styles */
+/* Preparing canvas, setting font families and major background colors */
 body {
     box-sizing: border-box;
     font-family: Montserrat, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -16,6 +16,7 @@ body {
     background-color: var(--salmon);
     text-align: center;
 }
+/* Removing original link underlines, and spacing around lists */
 a {
     text-decoration: none;
     color: var(--dark-blue);
@@ -25,6 +26,7 @@ ul, li {
     padding: 0;
     list-style-type: none;
 }
+/* Making sure images don't exceed the 100% of view height */
 img {
     max-height: 100vh;
     overflow: hidden;
@@ -37,13 +39,13 @@ nav {
     top: 2.5%;
     font-weight: 700;
 }
-/* nav bar has its own grid  */
+/* nav bar has its own 4-col grid so it doesn't need to be floated */
 nav ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
 }
-/* nav bar link styling */
+/* nav bar link is transparent and has some CSS animation */
 nav a {
     opacity: 0.4;
     color: white;
@@ -65,7 +67,8 @@ section {
 #cloris {
     background-color: var(--salmon);
 }
-/* img on left half of the grid */
+/* img on left side of the grid, however my h1 is really big 
+    so I had to give img more col space so it looks right. It occupies all 3 rows. */
 #cloris img {
     grid-column: 1 / 4;
     grid-row: 1 / -1;
@@ -73,7 +76,7 @@ section {
     padding: 2;
     max-width: 30vw;
 }
-/* h1 on right top */
+/* h1 on right top, it occupies 1 col and 2 rows */
 h1 {
     grid-column: 4 / -1;
     grid-row: 1 / 3;
@@ -85,7 +88,7 @@ h1 {
     letter-spacing: 0.5rem;
     margin: 0;
 }
-/* h2 on right bottom */
+/* h2 on right bottom, it occupies 1 col and 1 row */
 h2 {
     grid-column: 4 / -1;
     grid-row: 3 / -1;
@@ -95,12 +98,12 @@ h2 {
     font-size: 2rem;
 }
 
-/* Background section */
+/* Background section. Everything is centered in this section. */
 #background {
     background-color: var(--dark-blue);
     justify-items: center;
 }
-/* img on top 2 rows */
+/* img on top 2 rows and occupies all columns */
 #background img {
     grid-column: 1 / -1;
     grid-row: 1 / 3;
@@ -115,11 +118,11 @@ p {
     margin: 0;
     font-size: 1.8rem;
     align-self: center;
-    max-width: 700px;
-    line-height: 1.3;
+    max-width: 800px;
+    line-height: 1.4;
 }
 
-/* Education section */
+/* Education section. Everything is centered in this section. */
 #education {
     background-color: var(--apricot);
     justify-items: center;
@@ -129,29 +132,30 @@ p {
     grid-column: 2 / 4;
     grid-row: 2 / -1;
     max-height: 55vh;
-    padding-top: 5vh;
+    padding-top: 10vh;
 }
 /* p on top */
 #education p {
-    grid-column: 2 / 4;
     grid-row: 1 / 2;
     color: var(--dark-blue);
-    padding-top: 5vh;
+    padding-top: 13vh;
+    max-width: 930px;
 }
 
 /* Skills section */
 #skills {
     background-color: var(--peach);
+    justify-items: center;
 }
-/* table is at the bottom row */
+/* Table is at the bottom row, centered vertically and horizontally. */
 table {
     grid-column: 1 / -1;
     grid-row: 2 / -1;
-    justify-self: center;
     align-self: center;
     margin-top: 10vh;
     border-collapse: collapse;
 }
+/* Styling table elements to give them more space. */
 th {
     padding: 10px 20px;
     background-color: #FAC4B2;
@@ -159,37 +163,38 @@ th {
 td {
     padding: 10px;
 }
+/* Alternating row colors */
 tr:nth-child(2n+1){
     background-color: var(--skin);
 }
 /* p is on top 2 rows */
 #skills p {
-    grid-column: 2 / 4;
+    grid-column: 1 / -1;
     grid-row: 1 / 3;
-    align-self: center;
     color: var(--dark-blue);
-    font-size: 2rem;
+    max-width: 900px;
+    margin-top: -11vh;
 }
 
 footer{
     background-color: var(--peach);
     padding: 10px;
 }
-/* "I did it" statement floated to the bottom left */
+/* "Cloris did it" statement floated to the bottom left */
 footer p {
     color: #fafafa;
     font-size: 1rem;
     float: left;
     padding-top: 4px;
 }
-/* make social media bar horizontal a.k.a. floated */
+/* Make social media bar horizontal a.k.a. floated */
 footer li {
     float: left;
     display: block;
     padding: 0 10px;
     font-size: 1.5rem;
 }
-/* styling Fontawesome icons, which are at the bottom right */
+/* Icons are at the bottom right */
 footer div {
     float: right;
 }
